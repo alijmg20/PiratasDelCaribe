@@ -35,8 +35,6 @@ public class XMLParser {
 	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	Document doc = dBuilder.parse(fXmlFile);
  
-	//optional, but recommended
-	//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
 	doc.getDocumentElement().normalize();
 	System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 	NodeList nList = doc.getElementsByTagName("barco");
@@ -181,9 +179,9 @@ public class XMLParser {
                                  String cNombre = eCalamidad.getAttribute("nombre");
                                  Double cProb = Double.parseDouble(eCalamidad.getElementsByTagName("probabilidad").item(0).getTextContent());
                                  Integer cTropas = Integer.parseInt(eCalamidad.getElementsByTagName("tropas").item(0).getTextContent());
-                                 Integer cAmmo = Integer.parseInt(eCalamidad.getElementsByTagName("municiones").item(0).getTextContent());
+                                 Integer municiones = Integer.parseInt(eCalamidad.getElementsByTagName("municiones").item(0).getTextContent());
                                  Integer cRaciones = Integer.parseInt(eCalamidad.getElementsByTagName("raciones").item(0).getTextContent());
-                                 calamidad = new Calamidad(cNombre,cProb/10,cTropas,cRaciones,cAmmo);
+                                 calamidad = new Calamidad(cNombre,cProb/10,cTropas,cRaciones,municiones);
                                  return calamidad;
              }
          }

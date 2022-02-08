@@ -1,0 +1,98 @@
+<maquinas>
+	<maquina id="1"> 
+		<isla nombre="Isla Nueva Esperanzas"> 
+			<sitio nombre="Puerto Real"> 
+				<cofre tesoro="Barra de Oro"></cofre>
+				<cofre tesoro="Bolsa de Perlas"></cofre>
+			</sitio>
+			<sitio nombre="Cala de los Martires"> 
+				<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+				<cofre tesoro="Cofre de Joyas"></cofre>
+			</sitio>
+			<sitio nombre="Playa de las Perlas"> 
+				<cofre tesoro="Barra de Plata"></cofre>
+				<cofre tesoro="Mapa">Puerto de la Reina</cofre>
+			</sitio>
+		</isla>
+		<cayo nombre="Cayo del Buen Viento"> 
+			<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+		</cayo>
+		<cayo nombre="Cayo de Sotavento"> 
+			<cofre tesoro="Barra de Oro"></cofre>
+		</cayo>
+	</maquina>
+	<maquina id="2"> 
+		<isla nombre="Isla La Holandesa"> 
+			<sitio nombre="Puerto de La Reina"> 
+				<cofre tesoro="Barra de Oro"></cofre>
+				<cofre tesoro="Cofre de Joyas"></cofre>
+			</sitio>
+			<sitio nombre="Bahia del Buen Reposo"> 
+				<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+				<cofre tesoro="Bolsa de Perlas"></cofre>
+			</sitio>
+			<sitio nombre="Cueva de los Marineros"> 
+				<cofre tesoro="Bolsa de Monedas de Oro"></cofre>
+				<cofre tesoro="Bolsa de Perlas"></cofre>
+			</sitio>
+		</isla>
+		<isla nombre="Isla del Naufrago"> 
+			<sitio nombre="Bahia de la Esperanza"> 
+				<cofre tesoro="Barra de Oro"></cofre>
+				<cofre tesoro="Mapa">Cueva de los Huesos</cofre>
+			</sitio>
+			<sitio nombre="Cueva del Bucanero"> 
+				<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+				<cofre tesoro="Bolsa de Monedas de Oro"></cofre>
+			</sitio>
+		</isla>
+	</maquina>
+	<maquina  id="3">
+		<isla nombre="Isla Tortuga"> 
+			<sitio nombre="Cueva de los Huesos"> 
+				<cofre tesoro="Mapa">Puerto de las Ballenas</cofre>
+				<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+			</sitio>
+			<sitio nombre="Bahia del Buen Retiro"> 
+				<cofre tesoro="Corazon de la Princesa"></cofre>
+				<cofre tesoro="Cofre de Joyas"></cofre>
+			</sitio>
+		</isla>
+		<isla nombre="Isla las Aves"> 
+			<sitio nombre="Bahia de las Flores"> 
+				<cofre tesoro="Mapa">Cayo de los Pelicanos</cofre>
+				<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+			</sitio>
+			<sitio nombre="Cementerio de Barcos"> 
+				<cofre tesoro="Barra de Oro"></cofre>
+				<cofre tesoro="Bolsa de Perlas"></cofre>
+			</sitio>
+		</isla>
+		<cayo nombre="Cayo de Barlovento"> 
+			<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+		</cayo>
+	</maquina>
+	<maquina id="4"> 
+		<isla nombre="La Gran Isla de la Española"> 
+			<sitio nombre="Puerto Rico"> 
+				<cofre tesoro="Barra de Plata"></cofre>
+				<cofre tesoro="Bolsa de Perlas"></cofre>
+			</sitio>
+			<sitio nombre="Puerto de las Ballenas"> 
+				<cofre tesoro="Cofre de Joyas"></cofre>
+				<cofre tesoro="Cofre de Piedras Preciosas"></cofre>
+			</sitio>
+			<sitio nombre="Bahia del Tesoro Perdido"> 
+				<cofre tesoro="Mapa">Cala de los Martires</cofre>
+				<cofre tesoro="Bolsa de Monedas de Oro"></cofre>
+			</sitio>
+			<sitio nombre="Cueva del Pirata"> 
+				<cofre tesoro="Barra de Oro"></cofre>
+				<cofre tesoro="Barra de Plata"></cofre>
+			</sitio>
+		</isla>
+		<cayo nombre="Cayo de los Pelicanos"> 
+			<cofre tesoro="Bolsa de Perlas"></cofre>
+		</cayo>
+	</maquina>
+</maquinas>

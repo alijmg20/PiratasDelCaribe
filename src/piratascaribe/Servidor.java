@@ -104,15 +104,15 @@ public class Servidor {
                 xml.leerBarcos(3);
                 Barco br2 = xml.barcotemp;
                 Mapa mapaOrigen = new Mapa("Puerto de la Reina", "Isla La Holandesa", "2");
-
-                br1.setMapaOrigen(mapaOrigen);
                 br2.setMapaOrigen(mapaOrigen);
+                br1.setMapaOrigen(mapaOrigen);
 
                 Mapa mapa1 = new Mapa("Puerto Rico", "La Gran Isla de la Española", "4");
                 br1.agregarMapa(mapa1);
-
+                mapa1 = new Mapa("Cueva de los Huesos", "Isla Tortuga", "3");
+                br1.agregarMapa(mapa1);
+                
                 Mapa mapa2 = new Mapa("Cueva del Bucanero", "Isla del Naufrago", "2");
-
                 br2.agregarMapa(mapa2);
 
                 registro.rebind(br1.getName(), br1);

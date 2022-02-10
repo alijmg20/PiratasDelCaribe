@@ -87,7 +87,7 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
 
             //Elimino la referencia en la maquina anterior
             if (!nombreMaquinaAnterior.equalsIgnoreCase(this.nombre)) {
-                System.out.println("Hola soy maquina " + this.nombre + "y debo eliminar la refenrecia de: " + nombreMaquinaAnterior);
+                System.out.println("Hola soy maquina " + this.nombre + " y debo eliminar la refenrecia de: " + nombreMaquinaAnterior);
                 InterfazMaquina m = (InterfazMaquina) registroRemoto.lookup(nombreMaquinaAnterior);
                 m.eliminarReferenciaBarco(nombreBarco, nombreMaquinaAnterior);
             }
@@ -502,7 +502,7 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
         public void run() {
             try {
                 ubicarBarco(b, esOrigen);
-                Thread.sleep((long) (5 * 1000.0));
+                Thread.sleep((long) (7 * 1000.0));
                 izarVelas(b.getName());
             } catch (Exception e) {
                 System.out.println("Error en Maquina: HiloGui");

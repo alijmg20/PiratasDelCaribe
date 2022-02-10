@@ -7,6 +7,7 @@
 			</sitio>
 			<sitio nombre="Cala de los Martires"> 
 				<cofre>
+					<tesoro>Corazon de la Princesa</tesoro>
 					<tesoro>Bolsa de Perlas</tesoro>
 					<mapa>
 						<destino>Bahia de las Flores</destino>
@@ -14,7 +15,7 @@
 						<machine>3</machine>
 					</mapa>
 					<mapa>
-						<destino>Bahia del Tesoro Perdido</destino>
+						<destino>Cueva del pirata</destino>
 						<isla>La Gran Isla de la Española</isla>
 						<machine>4</machine>
 					</mapa>
@@ -33,6 +34,16 @@
 						<destino>Bahia del Buen Retiro</destino>
 						<isla>Isla Tortuga</isla>
 						<machine>3</machine>
+					</mapa>
+					<mapa>
+						<destino>Cueva del Pirata</destino>
+						<isla>La Gran Isla de la Española</isla>
+						<machine>4</machine>
+					</mapa>
+					<mapa>
+						<destino>Bahía del Buen Reposo</destino>
+						<isla>Isla La Holandesa</isla>
+						<machine>2</machine>
 					</mapa>
 					<mapa>
 						<destino>Cueva del Pirata</destino>
@@ -83,6 +94,15 @@
 						<isla>La Gran Isla de la Española</isla>
 						<machine>4</machine>
 					</mapa>
+					<mapa>
+						<destino>Cayo del Buen Viento</destino>
+						<machine>1</machine>
+					</mapa>
+					<mapa>
+						<destino>Bahia de la Esperanza</destino>
+						<isla>Isla del Naufrago</isla>
+						<machine>2</machine>
+					</mapa>
 				</cofre>
 			</sitio>
 		</isla>
@@ -110,7 +130,7 @@
 					<raciones>30</raciones>
 				</calamidad>
 				<cofre>
-					<tesoro>Corazon de la Princesa</tesoro>
+					
 					<mapa>
 						<destino>Cementerio de Barcos</destino>
 						<isla>Isla las Aves</isla>
@@ -255,7 +275,7 @@
 			</calamidad>
 			<cofre>
 					<tesoro>Cofre de Piedras Preciosas</tesoro>
-				</cofre>
+			</cofre>
 		</cayo>
 	</maquina>
 </maquinas>

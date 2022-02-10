@@ -304,8 +304,8 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
                                             System.out.println("ELEMENTOS ORIGINALES");
                                             barco.imprimirContenido();
                                             barco.setMuniciones(barco.getMuniciones() - calamidad.getResta_municiones());
-                                            barco.setnTripulacion(barco.getnTripulacion() - calamidad.getResta_trip());
-                                            barco.setnRaciones(barco.getnRaciones() - calamidad.getResta_racion());
+                                            barco.setTripulacion(barco.getTripulacion() - calamidad.getResta_trip());
+                                            barco.setRaciones(barco.getRaciones() - calamidad.getResta_racion());
                                             System.out.println("ELEMENTOS LUEGO CALAMIDAD");
                                             barco.imprimirContenido();
 
@@ -344,16 +344,16 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
                                 if (calamidad != null && calamidad.ocurreCalamidad()) {//true ocurre calamidad
                                     System.out.println("Ha ocurrido una calamidad: " + calamidad.getNombre());
                                     System.out.println("ELEMENTOS ORIGINALES");
-                                    System.out.println("Tripulacion: " + barco.getnTripulacion());
+                                    System.out.println("Tripulacion: " + barco.getTripulacion());
                                     System.out.println("municiones: " + barco.getMuniciones());
-                                    System.out.println("Raciones: " + barco.getnRaciones());
+                                    System.out.println("Raciones: " + barco.getRaciones());
                                     barco.setMuniciones(barco.getMuniciones() - calamidad.getResta_municiones());
-                                    barco.setnTripulacion(barco.getnTripulacion() - calamidad.getResta_trip());
-                                    barco.setnRaciones(barco.getnRaciones() - calamidad.getResta_racion());
+                                    barco.setTripulacion(barco.getTripulacion() - calamidad.getResta_trip());
+                                    barco.setRaciones(barco.getRaciones() - calamidad.getResta_racion());
                                     System.out.println("ELEMENTOS LUEGO CALAMIDAD");
-                                    System.out.println("Tripulacion: " + barco.getnTripulacion());
+                                    System.out.println("Tripulacion: " + barco.getTripulacion());
                                     System.out.println("Municiones: " + barco.getMuniciones());
-                                    System.out.println("Raciones: " + barco.getnRaciones());
+                                    System.out.println("Raciones: " + barco.getRaciones());
 
                                 }
                             }
@@ -406,7 +406,7 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
         if (b1.getPirata() == b2.getPirata()) {
             return;
         }
-        if (2 * b1.getnTripulacion() < b2.getnTripulacion() || 2 * b1.getMuniciones() < b2.getMuniciones()) {
+        if (2 * b1.getTripulacion() < b2.getTripulacion() || 2 * b1.getMuniciones() < b2.getMuniciones()) {
             System.out.println("El barco " + b1.getName() + " se ha retirado!");
             b1.enRetirada = true;
             if (b1.getSiguienteDestino() == -1) {
@@ -415,7 +415,7 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
                 b1.partir();
             }
         } else {
-            if (2 * b2.getnTripulacion() < b1.getnTripulacion() || 2 * b2.getMuniciones() < b1.getMuniciones()) {
+            if (2 * b2.getTripulacion() < b1.getTripulacion() || 2 * b2.getMuniciones() < b1.getMuniciones()) {
                 System.out.println("El barco " + b2.getName() + " se ha retirado!");
                 b2.enRetirada = true;
                 if (b2.getSiguienteDestino() == -1) {
@@ -425,13 +425,13 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
                 }
             } else {
                 int aux;
-                if (b1.getnTripulacion() > b2.getnTripulacion()) {
-                    aux = b1.getnTripulacion() - b2.getnTripulacion();
+                if (b1.getTripulacion() > b2.getTripulacion()) {
+                    aux = b1.getTripulacion() - b2.getTripulacion();
                 } else {
-                    aux = b2.getnTripulacion() - b1.getnTripulacion();
+                    aux = b2.getTripulacion() - b1.getTripulacion();
                 }
-                b1.setnTripulacion(b1.getnTripulacion() - (aux / 2));
-                b2.setnTripulacion(b2.getnTripulacion() - (aux / 2));
+                b1.setTripulacion(b1.getTripulacion() - (aux / 2));
+                b2.setTripulacion(b2.getTripulacion() - (aux / 2));
                 System.out.println(b1.getName() + " y " + b2.getName() + " han perdido " + (aux / 2) + " tripulantes");
                 if (b1.getMuniciones() > b2.getMuniciones()) {
                     aux = b1.getMuniciones() - b2.getMuniciones();
@@ -441,15 +441,15 @@ public class Maquina extends UnicastRemoteObject implements InterfazMaquina {
                 b1.setMuniciones(b1.getMuniciones() - (aux / 2));
                 b2.setMuniciones(b2.getMuniciones() - (aux / 2));
                 System.out.println(b1.getName() + " y " + b2.getName() + " han perdido " + (aux / 2) + " municiones");
-                System.out.println(b1.getName() + " ha quedado con " + b1.getnTripulacion() + " tripulantes");
-                System.out.println(b2.getName() + " ha quedado con " + b2.getnTripulacion() + " tripulantes");
+                System.out.println(b1.getName() + " ha quedado con " + b1.getTripulacion() + " tripulantes");
+                System.out.println(b2.getName() + " ha quedado con " + b2.getTripulacion() + " tripulantes");
             }
-            if (3 * b1.getnTripulacion() <= b1.getnTripulacionOriginal()) {
+            if (3 * b1.getTripulacion() <= b1.getnTripulacionOriginal()) {
                 System.out.println(b1.getName() + " ha sido derrotado!");
                 b1.enRetirada = true;
                 b1.partirOrigen();
             }
-            if (3 * b2.getnTripulacion() <= b2.getnTripulacionOriginal()) {
+            if (3 * b2.getTripulacion() <= b2.getnTripulacionOriginal()) {
                 System.out.println(b2.getName() + " ha sido derrotado!");
                 b2.enRetirada = true;
                 b2.partirOrigen();

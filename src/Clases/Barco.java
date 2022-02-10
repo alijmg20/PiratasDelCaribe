@@ -14,11 +14,11 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
 
     private String nombre;
     private Boolean pirata;
-    private Integer nTripulacion;
-    private Integer nRaciones;
+    private Integer tripulacion;
+    private Integer raciones;
     private Integer municiones;
-    private Integer nTripulacionOriginal;
-    private Integer nRacionesOriginal;
+    private Integer tripulacionOriginal;
+    private Integer racionesOriginal;
     private Integer municionesOriginal;
     private String maquinaOrigen;
     public boolean enRetirada;
@@ -38,12 +38,12 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
     public Barco(String nombre, Boolean pirata, Integer nTripulacionOriginal, Integer nRacionesOriginal, Integer nAmmoOriginal) throws RemoteException {
         this.nombre = nombre;
         this.pirata = pirata;
-        this.nTripulacionOriginal = nTripulacionOriginal;
-        this.nRacionesOriginal = nRacionesOriginal;
+        this.tripulacionOriginal = nTripulacionOriginal;
+        this.racionesOriginal = nRacionesOriginal;
         this.municionesOriginal = nAmmoOriginal;
         this.municiones = nAmmoOriginal;
-        this.nTripulacion = nTripulacionOriginal;
-        this.nRaciones = nRacionesOriginal;
+        this.tripulacion = nTripulacionOriginal;
+        this.raciones = nRacionesOriginal;
         this.enRetirada = false;
         if (nombre.equalsIgnoreCase("La_Venganza_Errante")) {
             this.cofre = new Cofre(100);
@@ -72,17 +72,17 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
 
     public void imprimirContenido() {
         System.out.println("--------------CONTENIDO BARCO--------------");
-        System.out.println("Numero Tripulacion: " + this.nTripulacion);
-        System.out.println("Numero Raciones: " + this.nRaciones);
+        System.out.println("Numero Tripulacion: " + this.tripulacion);
+        System.out.println("Numero Raciones: " + this.raciones);
         System.out.println("Numero municiones: " + this.municiones);
-        System.out.println("En Retirada: " + this.enRetirada);
+        System.out.println("Retirada: " + this.enRetirada);
         System.out.println("--------------***************--------------");
     }
 
     public void imprimirOriginales() {
         System.out.println("--------------ORIGINALES BARCO--------------");
-        System.out.println("Numero Tripulacion Original: " + this.nTripulacionOriginal);
-        System.out.println("Numero Raciones Original: " + this.nRacionesOriginal);
+        System.out.println("Numero Tripulacion Original: " + this.tripulacionOriginal);
+        System.out.println("Numero Raciones Original: " + this.racionesOriginal);
         System.out.println("Numero municiones Original: " + this.municionesOriginal);
         System.out.println("--------------***************--------------");
     }
@@ -136,23 +136,23 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
     }
 
     @Override
-    public Integer getnTripulacion() throws RemoteException {
-        return nTripulacion;
+    public Integer getTripulacion() throws RemoteException {
+        return tripulacion;
     }
 
     @Override
-    public Integer getnRaciones() throws RemoteException {
-        return nRaciones;
+    public Integer getRaciones() throws RemoteException {
+        return raciones;
     }
 
     @Override
-    public void setnRaciones(Integer nRaciones) throws RemoteException {
-        this.nRaciones = nRaciones;
+    public void setRaciones(Integer raciones) throws RemoteException {
+        this.raciones = raciones;
     }
 
     @Override
-    public void setnTripulacion(Integer nTripulacion) throws RemoteException {
-        this.nTripulacion = nTripulacion;
+    public void setTripulacion(Integer Tripulacion) throws RemoteException {
+        this.tripulacion = Tripulacion;
     }
 
     @Override
@@ -167,12 +167,12 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
 
     @Override
     public Integer getnTripulacionOriginal() {
-        return nTripulacionOriginal;
+        return tripulacionOriginal;
     }
 
     @Override
     public void setnTripulacionOriginal(Integer nTripulacionOriginal) {
-        this.nTripulacionOriginal = nTripulacionOriginal;
+        this.tripulacionOriginal = nTripulacionOriginal;
     }
 
     @Override
@@ -245,7 +245,7 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
 
     @Override
     public Integer getnRacionesOriginal() throws RemoteException {
-        return nRacionesOriginal;
+        return racionesOriginal;
     }
 
     @Override
@@ -304,11 +304,11 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
     public void copiarBarco(InterfazBarco barco) throws RemoteException {
         this.nombre = barco.getName();
         this.pirata = barco.getPirata();
-        this.nTripulacion = barco.getnTripulacion();
-        this.nRaciones = barco.getnRaciones();
+        this.tripulacion = barco.getTripulacion();
+        this.raciones = barco.getRaciones();
         this.municiones = barco.getMuniciones();
-        this.nTripulacionOriginal = barco.getnTripulacionOriginal();
-        this.nRacionesOriginal = barco.getnRacionesOriginal();
+        this.tripulacionOriginal = barco.getnTripulacionOriginal();
+        this.racionesOriginal = barco.getnRacionesOriginal();
         this.municionesOriginal = barco.getMunicionesOriginal();
         this.maquinaOrigen = barco.getMaquinaOrigen();
         this.mapaOrigen = barco.getMapaOrigen();
@@ -365,13 +365,13 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
     }
 
     public boolean retornarOrigen() {
-        if (this.nTripulacion <= (this.nTripulacionOriginal / 3)) {
+        if (this.tripulacion <= (this.tripulacionOriginal / 3)) {
             return true;
         }
         if (this.municiones <= 0) {
             return true;
         }
-        if (this.nRaciones <= 0) {
+        if (this.raciones <= 0) {
             return true;
         }
         if (this.cofre.getPeso() >= 90) {
@@ -386,8 +386,8 @@ public class Barco extends UnicastRemoteObject implements InterfazBarco {
 
     public void recargar() {
         this.municiones = this.municionesOriginal;
-        this.nRaciones = this.nRacionesOriginal;
-        this.nTripulacion = this.nTripulacionOriginal;
+        this.raciones = this.racionesOriginal;
+        this.tripulacion = this.tripulacionOriginal;
         this.enRetirada = false;
     }
 
